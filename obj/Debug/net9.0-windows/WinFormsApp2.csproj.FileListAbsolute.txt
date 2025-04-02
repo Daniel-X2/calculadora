@@ -17,3 +17,4 @@ B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\r
 B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\bin\Debug\net9.0-windows\pt-BR\WinFormsApp2.resources.dll
 B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.Form1.pt-BR.resources
 B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\pt-BR\WinFormsApp2.resources.dll
+B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.sourcelink.json
