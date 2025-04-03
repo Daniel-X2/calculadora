@@ -118,11 +118,12 @@ namespace WinFormsApp2
 
         private void resultado_Click(object sender, EventArgs e)
         {
-            string copia=null;
-            int veri = copia.Length;
-            foreach (var c in n1 )
+            string copia = null;
+            int veri = n1.Length;
+            for(int c=0;c<=veri;c++)
             {
-                if (c == 'x')
+
+                if (n1[c] == 'x')
                 {
                     copia += "*";
                 }
@@ -131,8 +132,11 @@ namespace WinFormsApp2
                     
                     copia += c;
                 }
+                if (c == veri & n1[c] == '+') ;
+                {
+                    n1.Remove(c);
+                }
             }
-
             
             n1 = copia;
             DataTable datatable = new DataTable();
