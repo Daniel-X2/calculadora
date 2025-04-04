@@ -33,7 +33,7 @@ namespace WinFormsApp2
             resultado.Click += label1_Click_1;
         }
 
-        private void Menos_Click(object? sender, EventArgs e )
+        private void Menos_Click(object sender, EventArgs e )
         {
             n1 += "-";
         }
@@ -132,10 +132,7 @@ namespace WinFormsApp2
                     
                     copia += c;
                 }
-                if (c == veri & n1[c] == '+') ;
-                {
-                    n1.Remove(c);
-                }
+                
             }
             
             n1 = copia;
@@ -168,7 +165,7 @@ namespace WinFormsApp2
         private void delete_Click(object sender, EventArgs e)
         {
             //remove o ultimo elemento adicionado
-           int n2=n1.Length-1;
+            int n2=n1.Length-1;
             string n3=n1.Remove(n2);
             n1 = n3;
             
@@ -177,7 +174,6 @@ namespace WinFormsApp2
         private void virgula_Click(object sender, EventArgs e)
         {
             //adiciona a virgula
-
             n1 += ",";
         }
     }
