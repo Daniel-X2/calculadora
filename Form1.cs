@@ -1,15 +1,18 @@
 using static System.Console;
 using System.Collections;
 using System;
-using System.Security.Permissions;
+
 using System.Data;
 namespace WinFormsApp2
 {
-    public partial class Form1 : Form
+    public partial class Janela : Form
     {
-        public string n1;
-        public bool sinal;
-        public Form1()
+        public string equaçao=string.Empty;
+        
+        public bool sinal=true;
+        public int tamanho_geral=30;
+        public bool aspas=false;
+        public Janela()
         {
             InitializeComponent();
             numero0.Click+= label1_Click_1;
@@ -28,14 +31,21 @@ namespace WinFormsApp2
             multiplica.Click += label1_Click_1;
             porcento.Click += label1_Click_1;
             virgula.Click += label1_Click_1;
-            aspas.Click += label1_Click_1;
+            cochetes.Click += label1_Click_1;
             ac.Click += label1_Click_1;
             delete.Click += label1_Click_1;
             resultado.Click += label1_Click_1;
+            Texto1.Text=equaçao;
+            
+            Texto1.Font=new Font(Texto1.Font.FontFamily,30);
+        }
+        private void aumentar_font(int tam=30)
+        {
+            Texto1.Font=new Font(Texto1.Font.FontFamily,tam);
         }
         private void Verificar_sinal()
         {
-            if (sinal==true)
+            if (sinal==true & equaçao!=string.Empty)
             {
                 delete_de_veri();
             }
@@ -43,21 +53,57 @@ namespace WinFormsApp2
         private void delete_de_veri()
         {
             //remove o ultimo elemento adicionado
-            int n2=n1.Length-1;
-            string n3=n1.Remove(n2);
-            n1 = n3;
+            int n2=equaçao.Length-1;
+            if (equaçao[n2]=='+' | equaçao[n2]=='-' |equaçao[n2]=='*' |equaçao[n2]=='%'|equaçao[n2]=='÷' |equaçao[n2]=='x' )
+                {
+                    string n3=equaçao.Remove(n2);
+                    equaçao = n3;
+                }
+        }
+        private void Sinais(string sinais)
+        {   
+            if (equaçao!=string.Empty)
+            {
+                equaçao+=sinais;
+                sinal=true;
+                if(equaçao.Length>=8)
+                {
+                    tamanho_geral--;
+                    aumentar_font(tamanho_geral);
+                }
+                
+            }
             
         }
+        private void Numeros(string numero)
+        {
+            
+            if (equaçao==string.Empty)
+            {
+                equaçao+=numero;
+                sinal=false;
+            }
+            else if ((equaçao.Length-1)<=0 | equaçao[equaçao.Length-1]!=')')
+            {
+                equaçao+=numero;
+                sinal=false;
+            }
+            
+            if(equaçao.Length>=8&equaçao.Length<=20)
+                {
+                    tamanho_geral--;
+                    aumentar_font(tamanho_geral);
+                }
 
+        }
         private void Menos_Click(object sender, EventArgs e )
         {
-            n1 += "-";
-            sinal=true;
+            Sinais("-");
         }
 
         private void label1_Click_1(object sender, EventArgs e)
         {
-            label1.Text = n1;
+            Texto1.Text = equaçao;
             
         }
 
@@ -68,70 +114,59 @@ namespace WinFormsApp2
 
         private void numero0_Click(object sender, EventArgs e)
         {
-            n1 += "0";
-            sinal=false;
+            Numeros("0");
         }
 
         private void numero1_Click(object sender, EventArgs e)
         {
-            n1 += "1";
-            sinal=false;
+            Numeros("1");
         }
 
         private void numero2_Click(object sender, EventArgs e)
         {
-            n1 += "2";
-            sinal=false;
+            Numeros("2");
         }
 
         private void numero3_Click(object sender, EventArgs e)
         {
-            n1 += "3";
-            sinal=false;
+            Numeros("3");
         }
 
         private void numero4_Click(object sender, EventArgs e)
         {
-            n1 += "4";
-            sinal=false;
+            Numeros("4");
         }
 
         private void numero5_Click(object sender, EventArgs e)
         {
-            n1 += "5";
-            sinal=false;
+            Numeros("5");
         }
 
         private void numero6_Click(object sender, EventArgs e)
         {
-            n1 += "6";
-            sinal=false;
+            Numeros("6");
         }
 
         private void numero7_Click(object sender, EventArgs e)
         {
-            n1 += "7";
-            sinal=false;
+            Numeros("7");
         }
 
         private void numero8_Click(object sender, EventArgs e)
         {
-            n1 += "8";
-            sinal=false;
+            Numeros("8");
         }
 
         private void numero9_Click(object sender, EventArgs e)
         {
-            n1 += "9";
-            sinal=false;
+            Numeros("9");
         }
 
         private void multi_Click(object sender, EventArgs e)
         {
             
             Verificar_sinal();
-            n1 += "x";
-            sinal=true;
+            Sinais("x");
 
         }
 
@@ -139,37 +174,38 @@ namespace WinFormsApp2
         {
             
             Verificar_sinal();
-            n1 += "-";
-            sinal=true;
+            Sinais("-");
         }
 
         private void mais_Click(object sender, EventArgs e)
         {
-            
             Verificar_sinal();
-            n1 += "+";
-            sinal=true;
+            Sinais("+");
         }
 
         private void resultado_Click(object sender, EventArgs e)
         {
-            char veri;
+            //aqui faz um verificaçao pra saber se o ultimo item clicado era um sinal
             if (sinal==true)
             {
                 
             }
-            else
+            else if(equaçao!=string.Empty)
             {
-                string copia = null;
-                foreach(char c in n1)
+                string copia = string.Empty;
+                foreach(char c in equaçao)//aqui faz uma breve troca entre os caracteres
                 {
                     if(c=='x')
                     {
                         copia+="*";
                     }
-                    else if(c=='/')
+                    else if(c=='÷')
                     {
                         copia+='/';
+                    }
+                    else if(c==',')
+                    {
+                        copia+='.';
                     }
                     else
                     {
@@ -177,10 +213,25 @@ namespace WinFormsApp2
                     }
                 }
                 
-                //int veri = n1.Length;
-                DataTable datatable = new DataTable();
-                var n2=datatable.Compute(copia, string.Empty);
-                n1 = n2.ToString();
+                //aqui converte tudo em um resultado
+                try
+                {
+                    DataTable datatable = new DataTable();
+                    var n2=datatable.Compute(copia, string.Empty);
+                    equaçao = n2.ToString();
+                    if (equaçao=="NaN")//aqui apaga tudo se for feito uma divisao de zero por zero
+                        {
+                            equaçao = string.Empty;
+                            sinal=true;
+                        }
+                }
+                catch (System.Exception)
+                {
+                    equaçao = string.Empty;
+                    sinal=true;
+                }
+                
+                
             }
         }
 
@@ -188,42 +239,82 @@ namespace WinFormsApp2
         {
             
             Verificar_sinal();
-            n1+="/";
-            sinal=true;
+            Sinais("÷");
         }
 
         private void porcento_Click(object sender, EventArgs e)
         {
-            
             Verificar_sinal();
-            n1 += "%";
-            sinal=true;
+            Sinais("%");
         }
 
         private void aspas_Click(object sender, EventArgs e)
         {
-            
+            if (aspas==false&equaçao!=string.Empty)
+            {
+                int veri=equaçao.Length-1;
+                if(equaçao[veri]=='+' |equaçao[veri]=='-' |equaçao[veri]=='x' |equaçao[veri]=='÷' |equaçao[veri]=='%'  )
+                    {
+                        equaçao+="(";
+                        aspas=true;
+                    }
+            }
+            else
+            {
+                aspas=false;
+                foreach( var c in equaçao)
+                {
+                    if (c=='(')
+                    {
+                        equaçao+=")";
+                        aspas=false;
+                    }
+                }
+                
+            }
         }
 
         private void ac_Click(object sender, EventArgs e)
         {
-            n1 = null;
+            //apaga tudo que esta na variavel
+            equaçao = string.Empty;
             sinal=true;
         }
 
         private void delete_Click(object? sender, EventArgs e)
         {
             //remove o ultimo elemento adicionado
-            int n2=n1.Length-1;
-            string n3=n1.Remove(n2);
-            n1 = n3;
+            try
+            {
+                if (equaçao==string.Empty)
+                    {
+
+                    }
+                else
+                    {
+                        int n2=equaçao.Length-1;
+                        if(equaçao[n2-1]==')')
+                            {
+                                aspas=false;
+                            }
+                        string n3=equaçao.Remove(n2);
+                        equaçao = n3;
+                    }
+            }
+            catch (System.Exception)
+            {
+                
+                equaçao=string.Empty;
+            }
+            
+            
+            
             
         }
-
         private void virgula_Click(object sender, EventArgs e)
         {
             //adiciona a virgula
-            n1 += ",";
+            Sinais(",");
         }
     }
 }

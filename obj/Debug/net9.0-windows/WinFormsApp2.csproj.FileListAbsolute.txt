@@ -3,7 +3,6 @@ B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\bin\Debug\net9.0-windows\W
 B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\bin\Debug\net9.0-windows\WinFormsApp2.runtimeconfig.json
 b:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\bin\Debug\net9.0-windows\WinFormsApp2.dll
 b:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\bin\Debug\net9.0-windows\WinFormsApp2.pdb
-b:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.Form1.resources
 b:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.csproj.GenerateResource.cache
 b:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.GeneratedMSBuildEditorConfig.editorconfig
 b:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.AssemblyInfoInputs.cache
@@ -15,7 +14,8 @@ b:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\W
 B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.genruntimeconfig.cache
 B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\ref\WinFormsApp2.dll
 B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\bin\Debug\net9.0-windows\pt-BR\WinFormsApp2.resources.dll
-B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.Form1.pt-BR.resources
 B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\pt-BR\WinFormsApp2.resources.dll
 B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.sourcelink.json
+B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.janela.resources
+B:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\WinFormsApp2.janela.pt-BR.resources
 b:\PROJETOS\C#\windowsforms\WinFormsApp2\WinFormsApp2\obj\Debug\net9.0-windows\pt-BR\WinFormsApp2.resources.cs
